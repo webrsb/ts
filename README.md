@@ -1,5 +1,7 @@
 # ts-practice
 
+(首頁)[dist]
+
 ## Project setup
 ```
 yarn install
