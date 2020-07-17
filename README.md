@@ -1,6 +1,6 @@
 # ts-practice
 
-(首頁)[dist]
+[首頁](dist)
 
 ## Project setup
 ```
