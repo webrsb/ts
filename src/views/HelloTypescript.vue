@@ -5,6 +5,61 @@
 </template>
 
 <script lang="ts">
+interface A {
+  x: number,
+  y: string
+}
+interface B {
+  x: number,
+  y: string,
+  z?: boolean
+}
+interface C {
+  [number: number]: number | string
+}
+interface D {
+  (arg0: string): number
+}
+interface E {
+  (arg0: string, arg1: string): string
+}
+interface F {
+  (): string
+}
+interface G {
+  (x: number, y: number): number
+}
+interface H {
+  (cb: (x: number)=> void): void
+}
+interface I {
+  [idx: number]: string
+}
+
+(() => {
+  let a:A = { x: 5, y: '6'}
+  let b:B = { x: 5, y: '6'}
+  b.z = true
+  let c:C = [1, '2'] // 此題類似I
+  let d:D = function (arg0) {
+      return Number(arg0)
+  }
+
+  let e:E = function (arg0, arg1):string {
+      return arg0 + arg1
+  }
+
+  let f:F = () => 'Hello'
+  let g:G = (x:number, y: number) => x + y
+
+  let cb = function (x: number) {
+      return x+1
+  }
+
+  let h:H = (cb) => {}
+  let i:I = {} // 這個 object 的 key 可以是任意整數，value為字串
+})
+
 /**
   * 2020/07/24 解答
   */
